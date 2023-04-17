@@ -7,6 +7,7 @@ function Board() {
   const winner = calculateWinner(squares)
   const status = calculateStatus(winner, squares, nextValue)
   
+  
   // const way=calculateWinningWay(squares[a,b,c])
   function selectSquare(square) {
     if (winner || squares[square]) {
@@ -24,7 +25,8 @@ function Board() {
 
   function renderSquare(i) {
     return (
-      <button className="square" onClick={() => selectSquare(i)}>
+      <button className="square" onClick={() => 
+      selectSquare(i)}>
         {squares[i]}
       </button>
     )
@@ -32,8 +34,12 @@ function Board() {
 
   return (
     <div>
+      <div className='player'>
+      <div className='player1'>Player 1 : X</div>
+      <div className='player2'>Player 2 : O</div>
+      </div>
+      <div></div>
       <div className="status">{status}</div>
-      
       <div className="board-row">
         {renderSquare(0)}
         {renderSquare(1)}
@@ -53,6 +59,9 @@ function Board() {
         restart
       </button>
       
+
+   
+    
     </div>
   )
 }
@@ -69,15 +78,39 @@ function Game() {
 
 function calculateStatus(winner, squares, nextValue) {
   return winner
-    ? `Winner: ${winner}`
-    : squares.every(Boolean)
-    ? `It's a Tie game`
-    : `Next player: ${nextValue}`
+  ? `Winner: ${winner}`
+  : squares.every(Boolean)
+  ? `It a Tie game`
+  : `Next player: ${nextValue}`
+    
 }
+
+// function calculateCount(winner){
+//   let countX=0;
+//   let countO=0;
+//   if(winner=='X'){
+//     countX=countX+1;
+//     return countX
+//   }
+//   else if(winner=='O'){
+//     countO=countO+1;
+//     return countO
+//   }
+  
+// }
+
+// function calculatePlayerStatus(nextPlayer) {
+  
+//     <div className='player-status'>Next player: {nextPlayer}</div>
+// }
 
 function calculateNextValue(squares) {
   return squares.filter(Boolean).length % 2 === 0 ? 'X' : 'O'
 }
+
+// function calculateNextPlayer(squares) {
+//   return squares.filter(Boolean).length % 2 === 0 ? 'X' : 'O'
+// }
 
 
 
@@ -123,8 +156,11 @@ function calculateWinner(squares) {
 function App() {
 
   return (
+    <div className='tic'>
+      <h1>TIC TAC TOE GAME</h1>
     <div className='game-ui'>
   <Game />
+  </div>
   </div>
   )
 }

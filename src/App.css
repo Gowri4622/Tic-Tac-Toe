@@ -3,9 +3,12 @@
   margin: 20px;
   min-height: 260px;
 }
+.tic{
+  text-align: center;
+}
 
 .game-ui{
-  margin-left: 40%;
+  margin-left: 30%;
   margin-top: 10%;
   
 }
@@ -21,30 +24,55 @@
   display: table;
 }
 
+
 .status {
   margin-bottom: 10px;
-  font-size: 20px;
+  font-size: 30px;
+  background-color: #f7b04e;
+  border-color: black;
+  border-radius: solid;
+  padding: 5px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
 }
 
 .restart {
   margin-top: 10px;
   padding: 10px;
   font-size: 20px;
+  border: 2px solid #030303 ;
 }
-
+.player2{
+  float: right;
+  margin-top: -35px;
+  font-size: 25px;
+  
+}
+.player1{
+  float: left;
+  margin-top: -35px;
+  font-size: 25px;
+}
 .square {
-  background: #fff;
-  border: 1px solid #999;
+  background: #f9a95d;
+  border: 2px solid #999;
   float: left;
   font-size: 24px;
   font-weight: bold;
   line-height: 34px;
-  height: 34px;
+  height: 100px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 34px;
+  width: 100px;
+}
+.player-status{
+  margin-left: 150%;
+  margin-top: 100%;
 }
 
 .square:focus {
